@@ -1,7 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
 import Ide from './Ide';
-
+import react from 'react';
 function App() {
   return (
     <div>
