@@ -1,0 +1,6 @@
+.setting{
+    display:grid;
+    /* display: inline; */
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: baseline;
+}
