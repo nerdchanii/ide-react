@@ -1,11 +1,11 @@
 import react from 'react';
 
-function Keybind({keybind, setKeybind}){
+function Keybind({keybind, handleKeybind}){
     const keymap= new Array('vim','vscode','sublime', 'emacs');
 
 
     return(
-        <select value= {keybind} onChange={setKeybind}>
+        <select value= {keybind} onChange={handleKeybind}>
             {keymap.map((i)=>{return<option value={i}>{i}</option>}, keymap)}
         </select>
 
