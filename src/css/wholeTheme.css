@@ -1,0 +1,27 @@
+:root{
+    --dark-color:#121212;
+    --light-color:#ee0e8;    ;
+}
+
+html{
+    background-color:var(--light-color);
+    color:var(--dark-color);
+    height: 100%
+}
+
+
+select{
+    background-color:var(--light-color);
+    color:var(--dark-color);
+}
+
+.wrapper{
+    height:vh;
+}
+.problem{
+    height:100%;
+}
+    
+.rightside{
+    height: 100%;
+}
