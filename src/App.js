@@ -1,4 +1,4 @@
-import Ide from './Ide';
+import Ide from './ide/Ide';
 import react from 'react';
 import Problem from './Problem'
 import Wrapper from './Wrapper'

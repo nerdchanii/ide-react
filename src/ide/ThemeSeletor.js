@@ -1,10 +1,10 @@
 import react from "react";
-
-
+import { themes, themesByName } from "ace-builds/src-noconflict/ext-themelist";
 
 function ThemeSelector({ theme, handleTheme }) {
   // const [wholeTheme, setwholeTheme] = useState('dark')
   
+  console.log(themesByName);
   let themeList = Object.keys(themesByName);
   console.log(themes);
 

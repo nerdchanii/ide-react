@@ -5,8 +5,9 @@ import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/webpack-resolver";
 import "ace-builds/src-noconflict/keybinding-vscode";
 import { Ace } from "ace-builds";
-import '../css/editor.css';
-import '../css/wholeTheme.css'
+import "../css/editor.css";
+import "../css/wholeTheme.css";
+
 function Editor({ mode, theme, font, keybind }) {
   // 옵션 수정시 반영
   // // const onLoad = () => {
@@ -18,10 +19,10 @@ function Editor({ mode, theme, font, keybind }) {
 
   function onChange(newVal) {
     localStorage.setItem("code", newVal);
-  };
+  }
   return (
     <AceEditor
-      style={{height:'100%'}}
+      style={{ height: "100%" }}
       className="Editor"
       keyboardHandler={keybind}
       placeholder="let happy hacking"
@@ -45,9 +46,8 @@ function Editor({ mode, theme, font, keybind }) {
         enableSnippets: false,
         showLineNumbers: true,
         tabSize: 4,
-      }
-    }
-    width="100%"
+      }}
+      width="100%"
     />
   );
 }
