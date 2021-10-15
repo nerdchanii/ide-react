@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import HeaderBar from "./HeaderBar"
+import HeaderBar from "./HeaderBar";
 
 ReactDOM.render(
   <React.StrictMode>
-    <HeaderBar style={{height:100}} />
+    <HeaderBar style={{ height: 100 }} />
     <App />
   </React.StrictMode>,
   document.getElementById("root")

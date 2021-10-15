@@ -11,9 +11,9 @@ const FontSizeSelector = ({ font, handleFont }) => {
 
   console.log(a);
   return (
-      <select className="wholeTheme" value={font} onChange={handleFont}>
-        {a.map(opt, a)}
-      </select>
+    <select className="wholeTheme" value={font} onChange={handleFont}>
+      {a.map(opt, a)}
+    </select>
   );
 };
 

@@ -1,27 +1,36 @@
-:root{
-    --dark-color:#121212;
-    --light-color:#ee0e8;    ;
+:root {
+  --dark-color: #121212;
+  --light-color: #ee0e8;
 }
 
-html{
-    background-color:var(--light-color);
-    color:var(--dark-color);
-    height: 100%
+html {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  height: 100%;
 }
 
-
-select{
-    background-color:var(--light-color);
-    color:var(--dark-color);
+select {
+  background-color: var(--light-color);
+  color: var(--dark-color);
 }
 
-.wrapper{
-    height:vh;
+.wrapper {
+  height: vh;
 }
-.problem{
-    height:100%;
+.problem {
+  height: 100%;
 }
-    
-.rightside{
-    height: 100%;
+
+.rightside {
+  height: 100%;
+}
+.settingbar {
+  display: grid;
+  /* display: inline; */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 2px;
+  margin: 0px;
+}
+.hidden {
+  display: none;
 }

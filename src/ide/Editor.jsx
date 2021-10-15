@@ -5,7 +5,6 @@ import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/webpack-resolver";
 import "ace-builds/src-noconflict/keybinding-vscode";
 import { Ace } from "ace-builds";
-import "../css/editor.css";
 import "../css/wholeTheme.css";
 
 function Editor({ mode, theme, font, keybind }) {
@@ -22,7 +21,7 @@ function Editor({ mode, theme, font, keybind }) {
   }
   return (
     <AceEditor
-      style={{ height: "100%" }}
+      // style={{ height: "100%" }}
       className="Editor"
       keyboardHandler={keybind}
       placeholder="let happy hacking"

@@ -15,13 +15,11 @@ function Ide() {
   );
   const [mode, setMode] = useState(
     localStorage.getItem("mode") === null
-    ? "c_cpp"
-    : localStorage.getItem("mode")
+      ? "c_cpp"
+      : localStorage.getItem("mode")
   );
   const [font, setFont] = useState(
-    localStorage.getItem('font') === null
-    ? 10
-    : localStorage.getItem('font')
+    localStorage.getItem("font") === null ? 10 : localStorage.getItem("font")
   );
 
   const [keybind, setKeybind] = useState("vscode");
@@ -30,10 +28,10 @@ function Ide() {
     setTheme(e.target.value);
     localStorage.setItem("theme", e.target.value);
   };
-  const changeMode =(e) =>{
+  const changeMode = (e) => {
     setMode(e.target.value);
     localStorage.setItem("mode", e.target.value);
-  }
+  };
   const changeFontSize = (e) => {
     setFont(e.target.value);
     localStorage.setItem("fontSize", e.target.value);
@@ -48,10 +46,10 @@ function Ide() {
     <div className="rightside">
       {/* <problrem. > */}
       <Settings className="settings">
-        <ThemeSelector  theme={theme} handleTheme={changeTheme} />
-        <FontSizeSelector  font={font} handleFont={changeFontSize} />
+        <ThemeSelector theme={theme} handleTheme={changeTheme} />
+        <FontSizeSelector font={font} handleFont={changeFontSize} />
         <Keybind keybind={keybind} handleKeybind={chagneKeybind} />
-        <ModeSelector mode={mode} handleMode={changeMode}/>
+        <ModeSelector mode={mode} handleMode={changeMode} />
       </Settings>
       <Editor mode={mode} theme={theme} font={font} keybind={keybind} />
       <Output />
