@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import React, { useState } from "react";
 import Editor from "./Editor";
 import ThemeSelector from "./ThemeSeletor";
 import FontSizeSelector from "./FontSizeSelector";
@@ -8,50 +8,46 @@ import ModeSelector from "./ModeSelector";
 import Output from "./Output";
 
 function Ide() {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") === null
-      ? "monokai"
-      : localStorage.getItem("theme")
-  );
-  const [mode, setMode] = useState(
-    localStorage.getItem("mode") === null
-      ? "c_cpp"
-      : localStorage.getItem("mode")
-  );
-  const [font, setFont] = useState(
-    localStorage.getItem("font") === null ? 10 : localStorage.getItem("font")
-  );
+  const [Setting, setSetting] = useState({
+    theme:
+      localStorage.getItem("theme") === null
+        ? "monokai"
+        : localStorage.getItem("theme"),
+    mode:
+      localStorage.getItem("mode") === null
+        ? "c_cpp"
+        : localStorage.getItem("mode"),
+    font:
+      localStorage.getItem("font") === null ? 10 : localStorage.getItem("font"),
+    keybind:
+      localStorage.getItem("keybind") === null
+        ? "vscode"
+        : localStorage.getItem("keybind"),
+  });
 
-  const [keybind, setKeybind] = useState("vscode");
-
-  const changeTheme = (e) => {
-    setTheme(e.target.value);
-    localStorage.setItem("theme", e.target.value);
-  };
-  const changeMode = (e) => {
-    setMode(e.target.value);
-    localStorage.setItem("mode", e.target.value);
-  };
-  const changeFontSize = (e) => {
-    setFont(e.target.value);
-    localStorage.setItem("fontSize", e.target.value);
-  };
-
-  const chagneKeybind = (e) => {
-    setKeybind(e.target.value);
-    localStorage.setItem("keybind", e.target.value);
+  const onChange = (e) => {
+    const { value, name } = e.target;
+    localStorage.setItem(name, value);
+    setSetting({
+      [name]: value,
+    });
   };
 
   return (
     <div className="rightside">
       {/* <problrem. > */}
       <Settings className="settings">
-        <ThemeSelector theme={theme} handleTheme={changeTheme} />
-        <FontSizeSelector font={font} handleFont={changeFontSize} />
-        <Keybind keybind={keybind} handleKeybind={chagneKeybind} />
-        <ModeSelector mode={mode} handleMode={changeMode} />
+        <ThemeSelector theme={Setting.theme} handleTheme={onChange} />
+        <FontSizeSelector font={Setting.font} handleFont={onChange} />
+        <Keybind keybind={Setting.keybind} handleKeybind={onChange} />
+        <ModeSelector mode={Setting.mode} handleMode={onChange} />
       </Settings>
-      <Editor mode={mode} theme={theme} font={font} keybind={keybind} />
+      <Editor
+        mode={Setting.mode}
+        theme={Setting.theme}
+        font={Setting.font}
+        keybind={Setting.keybind}
+      />
       <Output />
     </div>
   );

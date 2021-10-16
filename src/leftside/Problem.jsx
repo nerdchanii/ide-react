@@ -1,4 +1,3 @@
-import react from "react";
 import "../css/wholeTheme.css";
 
 const Problem = (props) => {

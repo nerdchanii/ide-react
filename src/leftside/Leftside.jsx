@@ -3,18 +3,15 @@ import Problem from "./Problem";
 import WaitingRoom from "./WaitingRoom";
 import "../css/wholeTheme.css";
 
-const LeftSideConatiner = (Location) => {
-  const [show, setShow] = useState(Location);
+const LeftSideConatiner = (props) => {
+  const {Locate, onChange} = props
 
-  const onchange = (e) => {
-    setShow(show === "Problem" ? "WaitingRoom" : "Problem");
-  };
 
   return (
     <div>
-      <button onClick={onchange}>change</button>
-      <Problem className={show === "Problem" ? "showing" : "hidden"} />
-      <WaitingRoom classname={show === "WaitingRoom" ? "showing" : "hidden"} />
+      <button onClick={onChange}>change</button>
+      <Problem className={Locate === "Problem" ? "showing" : "hidden"} />
+      <WaitingRoom className={Locate === "WaitingRoom" ? "showing" : "hidden"} />
     </div>
   );
 };

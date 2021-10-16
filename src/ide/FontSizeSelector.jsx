@@ -1,5 +1,3 @@
-import react from "react";
-
 const FontSizeSelector = ({ font, handleFont }) => {
   const opt = (i) => {
     return <option value={i}>{i}</option>;
@@ -11,7 +9,12 @@ const FontSizeSelector = ({ font, handleFont }) => {
 
   console.log(a);
   return (
-    <select className="wholeTheme" value={font} onChange={handleFont}>
+    <select
+      name="font"
+      className="wholeTheme"
+      value={font}
+      onChange={handleFont}
+    >
       {a.map(opt, a)}
     </select>
   );

@@ -4,7 +4,6 @@ import "ace-builds/src-noconflict/mode-c_cpp";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/webpack-resolver";
 import "ace-builds/src-noconflict/keybinding-vscode";
-import { Ace } from "ace-builds";
 import "../css/wholeTheme.css";
 
 function Editor({ mode, theme, font, keybind }) {
@@ -25,7 +24,7 @@ function Editor({ mode, theme, font, keybind }) {
       className="Editor"
       keyboardHandler={keybind}
       placeholder="let happy hacking"
-      mode={localStorage.getItem("mode")}
+      mode={mode}
       theme={theme}
       name="Editor"
       // onLoad={onLoad}

@@ -3,11 +3,16 @@ import { useState } from "react";
 import LeftSide from "./leftside/Leftside";
 import Wrapper from "./Wrapper";
 function App() {
-  const [userLocation, setuserLocation] = useState("waitingRoom");
+  const [Locate, setLocate] = useState("WaitingRoom");
+
+  const onChange = (e) => {
+    setLocate(Locate === "Problem" ? "WaitingRoom" : "Problem");
+  };
+
   return (
     <div>
       <Wrapper>
-        <LeftSide userLocate={userLocation} />
+        <LeftSide Locate={Locate} onChange={onChange} />
         <Ide />
       </Wrapper>
     </div>

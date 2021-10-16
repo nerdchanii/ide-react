@@ -10,7 +10,7 @@ function ThemeSelector({ theme, handleTheme }) {
 
   const themeOpt = (opt) => {return <option value={opt}>{opt}</option>}
   return (
-    <select className="wholeTheme" value={theme} onChange={handleTheme}>
+    <select name="theme"className="wholeTheme" value={theme} onChange={handleTheme}>
       {themeList.map(themeOpt,themeList)}
     </select>
   );
