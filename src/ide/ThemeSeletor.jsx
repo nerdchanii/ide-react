@@ -1,4 +1,3 @@
-import react from "react";
 import { themes, themesByName } from "ace-builds/src-noconflict/ext-themelist";
 
 function ThemeSelector({ theme, handleTheme }) {

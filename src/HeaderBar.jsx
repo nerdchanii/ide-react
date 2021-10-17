@@ -1,4 +1,3 @@
-import react from "react";
 import Login from "./Login";
 
 const HeaderBar = () => {
